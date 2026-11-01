@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- esto es el atributo lang que especifica el idioma de la página -->
+    <head>
+        <style>
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            }
+        </style>
+        <title>SurkiA - Inicio</title> <!-- esto es el título de la página -->
+        <link rel="stylesheet" href="estilos.css">
+    </head>
+    <body>
+    <div class="contenido-principal">
+        <h1>Surkia</h1>
+        <h3 class="sutitulo">Robots agrícolas inteligentes de desmalezado selectivo para una producción agrícola precisa, eficiente y ambientalmente responsable.</h3>
+        <hr>
+        <br>
+        <br>
+        <nav class="menu-principal">
+        <a href="nosotros.html" title="nosotros" class="btn-opcion">
+            Nosotros
+        </a>
+        <br>
+        <a href="ods.html" title="ODS" class="btn-opcion">
+            Objetivos de desarrollo sustentable
+        </a>
+        <br>
+        <a href="modelo.html" title="prototipo" class="btn-opcion">
+            Nuestro prototipo robot
+        </a>
+        </nav>
+        <br>
+        <br>
+        <p class="descipcion">
+            Somos una empresa de base tecnológica establecida en La Plata (Buenos Aires), 
+            dedicada al diseño y fabricación de robots autónomos enfocados en optimizar 
+            los procesos productivos del Cinturón Hortícola Platense, integrando la ingeniería 
+            con el desarrollo sostenible.
+        </p>
+        <br>
+        <br>
+        <br>
+    </div>
+    <footer class="footer-surkia">
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <h3>SurkiA</h3>
+                <p>Robótica agrícola e innovación tecnológica para un desarrollo agropecuario sustentable en la región.</p>
+            </div>
+            <div class="footer-seccion">
+                <h3>Ubicación</h3>
+                <p>Lisandro Olmos, Partido de La Plata</p>
+                <p>Provincia de Buenos Aires, Argentina</p>
+            </div>
+            <div class="footer-seccion">
+                <h3>Contacto</h3>
+                <p>📧 info@surkia.com</p>
+                <p>📞 +54 (221) 000-0000</p>
+            </div>
+        </div>
+        <div class="footer-inferior">
+            <p>&copy; 2026 SurkiA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    </body>
+    <style>
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .contenido-principal {
+        flex: 1;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+        color: #b0bec5;
+        margin-bottom: 30px;
+        line-height: 1.5;
+    }
+
+    .descripcion {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #cccccc;
+        margin-top: 30px;
+    }
+
+    .menu-principal {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .btn-opcion {
+        flex: 1;
+        min-width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffffff;             
+        background-color: #1e293b;
+        padding: 40px 20px;
+        border-radius: 10px;        
+        text-decoration: none;      
+        border: 1px solid #334155;  
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
+
+    .btn-opcion:hover {
+        background-color: #334155;
+        border-color: #475569;
+        transform: translateY(-3px);
+    }
+
+    .footer-surkia {
+        background-color: #0f2314;
+        color: #ffffff;             
+        font-family: Arial, sans-serif;
+        padding-top: 40px;
+        width: 100%;
+        border-top: 2px solid #1e4620;
+    }
+
+    .footer-contenido {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px 30px 20px;
+        gap: 30px;
+    }
+
+    .footer-seccion {
+        flex: 1;
+        min-width: 250px;
+    }
+
+    .footer-seccion h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #81c784;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #81c784;
+        padding-bottom: 5px;
+        display: inline-block;
+    }
+
+    .footer-seccion p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 8px 0;
+        color: #b0bec5;
+    }
+
+    .footer-inferior {
+        background-color: #08140a;
+        text-align: center;
+        padding: 15px 20px;
+        border-top: 1px solid #143316;
+    }
+
+    .footer-inferior p {
+        font-size: 14px;
+        color: #90a4ae;
+        margin: 0;
+    }
+    </style>
+</html>

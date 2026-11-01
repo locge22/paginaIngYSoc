@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <style>
+        p {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            }
+        </style>
+        <title>Modelo Robot</title>
+    </head>
+    <body>
+        <div class="contenido-principal">
+            <a href="interfaz.html" title="inicio" class="btn-volver">
+                ← Volver
+            </a>  
+            <h1>Nuestro Robot: Tecnologia al servicio del campo</h1>
+            <br>
+            <p>
+                Diseñado bajo un modelo productivo felixible y modular,
+                nuestro robot comina la robotica, la inteligencia artificial
+                y la agronomia para transformar el desmalezado convencional.
+            </p>
+            <div class="contenedor-modelo">
+
+                <div class="recuadro-modelo">
+                    <h3>Pulverización Localizada</h3>
+                    <hr>
+                    <ul>
+                    <strong>Como funciona:</strong> Aplica herbicida de forma selectiva únicamente sobre las plantas no deseadas, reduciendo drásticamente el uso innecesario de productos químicos y el impacto ambiental.
+                    <div class="simulador-camara-container">
+                    <div class="opencv-ventana">
+                        <div class="opencv-barra-titulo">
+                            <span class="titulo-ventana">1. Simulador de Robot Pulverizador - SurkiA</span>
+                            <div class="opencv-botones">
+                                <span>_</span><span>□</span><span>×</span>
+                            </div>
+                        </div>
+
+                        <div class="opencv-pantalla">
+                            <div class="terreno-grid"></div>
+
+                            <div class="caja-deteccion-inteligente">
+                                <span class="texto-etiqueta-ia" id="etiqueta-ia">Cultivo Sano (Ignorado)</span>
+                                <div class="punto-centro" id="punto-centro"></div>
+                            </div>
+
+                            <div class="linea-pico-camara" id="linea-pico"></div>
+
+                            <div class="aviso-pulverizando-camara" id="aviso-pulverizar">>>> PULVERIZANDO <<<</div>
+
+                            <div class="led-pico-container">
+                                <div class="led-circulo" id="led-valvula"></div>
+                                <span class="led-texto">PICO</span>
+                            </div>
+
+                            <div class="opencv-telemetria">
+                                Plantas tratadas: <span id="contador-plantas">14</span> &nbsp;|&nbsp; Caldo aplicado: <span id="caldo-litros">0.210 L</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </ul>
+                </div>
+
+                <div class="recuadro-modelo">
+                    <h3>Camara e integracion de IA</h3>
+                    <hr>
+                    <ul>
+                    <strong>Como funciona:</strong> Incorpora sistemas de reconocimiento visual capaces de diferenciar con precisión los cultivos de las malezas. Mediante la incorporacion de una IA capaz de identificar las malezas.
+                    <br>
+                    <br>
+                        <div class="demo-vision-container">
+                            <div class="pantalla-demo">
+
+                                <div class="fondo-cultivo">
+                                    <span class="etiqueta-cultivo">Planta de Cultivo / Suelo</span>
+                                </div>
+
+                                <div class="caja-deteccion">
+                                    <span class="texto-cogollo">Cogollo (320, 240)</span>
+                                    <div class="mira-centro"></div>
+                                </div>
+
+                                <div class="linea-pico"> 
+                                </div>
+                                <div class="aviso-pulverizando">>>PULVERIZANDO<<</div>
+
+                                <div class="telemetria-demo">
+                                    Plantas tratadas: <span id="contador-animado">12</span> | Caldo aplicado: <span id="caldo-animado">0.180 L</span>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+            <div class="contenedor-modelo">
+                <div class="recuadro-modelo">
+                    <h3>Energia solar</h3>
+                    <hr>
+                    <ul>
+                    <strong>Como funciona:</strong> Cuenta con una batería recargable y una estación de carga alimentada por paneles solares, permitiendo que el equipo regrese automáticamente a recargarse.
+                    </ul>
+                </div>
+
+                <div class="recuadro-modelo">
+                    <h3>Economía Circular y Reparabilidad</h3>
+                    <hr>
+                    <ul>
+                    <strong>Como funciona:</strong> Fabricado con componentes modulares y materiales duraderos que facilitan su mantenimiento, reparación y prolongan su vida útil sin descartar el equipo.
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    
+        <footer class="footer-surkia">
+            <div class="footer-contenido">
+                <div class="footer-seccion">
+                    <h3>SurkiA</h3>
+                    <p>Robótica agrícola e innovación tecnológica para un desarrollo agropecuario sustentable en la región.</p>
+                </div>
+                <div class="footer-seccion">
+                    <h3>Ubicación</h3>
+                    <p>Lisandro Olmos, Partido de La Plata</p>
+                    <p>Provincia de Buenos Aires, Argentina</p>
+                </div>
+                <div class="footer-seccion">
+                    <h3>Contacto</h3>
+                    <p>📧 info@surkia.com</p>
+                    <p>📞 +54 (221) 000-0000</p>
+                </div>
+            </div>
+            <div class="footer-inferior">
+                <p>&copy; 2026 SurkiA. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </body>
+    <style>
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .contenido-principal {
+            flex: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            font-size: 18px;
+            color: #b0bec5;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+
+        .descripcion {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+            margin-top: 30px;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            color: #e0e7f0;
+            background-color: #3a3c3b;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid #1f432b;
+        }
+
+        .btn-volver:hover {
+            background-color: #d9e2ec;
+            color: #102a43;
+        }
+
+        .contenedor-modelo {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-family: Arial, sans-serif;
+        }
+
+        .recuadro-modelo {
+            flex: 1;
+            min-width: 280px;
+            background-color: #2d2d2d;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .recuadro-modelo h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 0;
+            color: #ceddf3; 
+        }
+
+        .recuadro-modelo ul {
+            margin: 10px 0 0 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .demo-vision-container {
+            background-color: #1a2234;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .pantalla-demo {
+            position: relative;
+            width: 100%;
+            max-width: 640px;
+            height: 360px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #475569;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .fondo-cultivo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: radial-gradient(#334155 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .etiqueta-cultivo {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .caja-deteccion {
+            position: absolute;
+            width: 120px;
+            height: 90px;
+            border: 2px solid #00ff66;
+            background-color: rgba(0, 255, 102, 0.1);
+            top: 35%;
+            left: 40%;
+            border-radius: 4px;
+            animation: moverCaja 4s infinite ease-in-out;
+        }
+
+        .texto-cogollo {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            color: #00ff66;
+            font-size: 11px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2px 4px;
+        }
+
+        .mira-centro {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3333;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .linea-pico {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            border-top: 2px dashed #38bdf8;
+        }
+
+        .texto-pico {
+            position: absolute;
+            right: 10px;
+            top: -12px;
+            background: rgba(0,0,0,0.8);
+            color: #38bdf8;
+            font-size: 10px;
+            padding: 2px 6px;
+        }
+
+        .aviso-pulverizando {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff3333;
+            font-weight: bold;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 6px 15px;
+            border-radius: 4px;
+            border: 1px solid #ff3333;
+            animation: parpadearDisparo 4s infinite;
+        }
+
+        .telemetria-demo {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.9);
+            color: #00ffff;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            box-sizing: border-box;
+            border-top: 1px solid #334155;
+        }
+
+        @keyframes moverCaja {
+            0% { top: 20%; left: 15%; opacity: 0.8; }
+            40% { top: 45%; left: 45%; opacity: 1; }
+            50% { top: 45%; left: 45%; border-color: #ff3333; background-color: rgba(255, 51, 51, 0.2); }
+            80% { top: 70%; left: 70%; opacity: 0.8; border-color: #00ff66; background-color: rgba(0, 255, 102, 0.1); }
+            100% { top: 20%; left: 15%; opacity: 0.8; }
+        }
+
+        @keyframes parpadearDisparo {
+            0%, 42% { opacity: 0; }
+            45%, 55% { opacity: 1; }
+            58%, 100% { opacity: 0; }
+        }
+
+        .simulador-camara-container {
+            background-color: #1a2234;
+            border: 1px solid #334155;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 25px;
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+        }
+
+        .simulador-camara-container h3 {
+            font-size: 20px;
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        .simulador-camara-container p {
+            font-size: 16px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .opencv-ventana {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: #1e1e1e;
+            border: 2px solid #555;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+
+        .opencv-barra-titulo {
+            background-color: #2d2d2d;
+            color: #cccccc;
+            font-size: 12px;
+            padding: 6px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+
+        .opencv-botones span {
+            margin-left: 8px;
+            font-weight: bold;                
+            cursor: pointer;
+        }
+
+        .opencv-pantalla {
+            position: relative;
+            width: 100%;
+            height: 360px;
+            background-color: #0c1017;                
+            overflow: hidden;
+        }
+
+        .terreno-grid {
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#26334d 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+        }
+
+        .caja-deteccion-inteligente {
+            position: absolute;                
+            width: 120px;
+            height: 90px;
+            border: 2px solid #00ff66;
+            background-color: rgba(0, 255, 102, 0.08);
+            top: 44%;
+            left: 42%;
+            animation: cicloDeteccion 6s infinite;
+        }
+
+        .texto-etiqueta-ia {
+            position: absolute;
+            top: -18px;
+            left: 0;
+            color: #00ff66;
+            font-size: 10px;
+            font-family: monospace;
+            background: rgba(0,0,0,0.85);
+            padding: 1px 4px;
+            white-space: nowrap;
+            animation: cambiarTextoEtiqueta 6s infinite;
+        }
+
+        .punto-centro {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background-color: #00ff66;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: cambiarPuntoCentro 6s infinite;
+        }
+
+        .linea-pico-camara {
+            position: absolute;
+            top: 50%;
+            left: 0;                
+            width: 100%;
+            border-top: 2px solid #ffff00;
+            animation: colorLineaPicoSelectivo 6s infinite;
+        }
+
+        .aviso-pulverizando-camara {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ff3333;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: monospace;
+            text-shadow: 0 0 5px rgba(255, 51, 51, 0.8);
+            animation: parpadearAvisoSelectivo 6s infinite;
+        }
+
+            
+        .led-pico-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            text-align: center;
+        }
+
+        .led-circulo {
+            width: 22px;
+            height: 22px;
+            background-color: #282828;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            margin: 0 auto;
+            animation: prenderLedSelectivo 6s infinite;
+        }
+
+        .led-texto {
+            display: block;
+            color: #ffffff;
+            font-size: 10px;
+            margin-top: 3px;
+            font-family: monospace;
+        }
+
+        .opencv-telemetria {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #141414;
+            border-top: 1px solid #333;
+            color: #00ffff;
+            font-family: monospace;
+            font-size: 13px;
+            padding: 10px 15px;
+            box-sizing: border-box;
+        }
+
+        @keyframes cicloDeteccion {                
+                0%, 45% { 
+                top: 20%; left: 15%; 
+                border-color: #00ff66; 
+                background-color: rgba(0, 255, 102, 0.08); 
+            }
+                
+            50%, 95% { 
+                top: 44%; left: 45%; 
+                border-color: #ff3333; 
+                background-color: rgba(255, 51, 51, 0.15); 
+            }
+                
+            100% { 
+                top: 20%; left: 15%; 
+                border-color: #00ff66; 
+                background-color: rgba(0, 255, 102, 0.08); 
+            }
+        }
+
+        @keyframes cambiarTextoEtiqueta {
+            0%, 45% { content: "Cultivo Sano (Ignorado)"; color: #00ff66; }
+            50%, 95% { content: "Maleza Detectada"; color: #ff3333; }
+            100% { content: "Cultivo Sano (Ignorado)"; color: #00ff66; }
+        }
+
+        @keyframes cambiarPuntoCentro {
+            0%, 45% { background-color: #00ff66; }
+            50%, 95% { background-color: #ff3333; }
+            100% { background-color: #00ff66; }
+        }
+
+        @keyframes colorLineaPicoSelectivo {
+            0%, 48% { border-top-color: #ffff00; border-top-width: 2px; }
+            50%, 75% { border-top-color: #ff3333; border-top-width: 4px; }
+            78%, 100% { border-top-color: #ffff00; border-top-width: 2px; }
+        }
+
+        @keyframes parpadearAvisoSelectivo {
+            0%, 48% { opacity: 0; }
+            50%, 75% { opacity: 1; }
+            78%, 100% { opacity: 0; }
+        }
+
+        @keyframes prenderLedSelectivo {
+            0%, 48% { background-color: #282828; }
+            50%, 75% { background-color: #ff3333; box-shadow: 0 0 8px #ff3333; }
+            78%, 100% { background-color: #282828; }
+        }
+
+        .footer-surkia {
+            background-color: #0f2314;
+            color: #ffffff;             
+            font-family: Arial, sans-serif;
+            padding-top: 40px;
+            width: 100%;
+            border-top: 2px solid #1e4620;
+        }
+
+        .footer-contenido {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 30px 20px;
+            gap: 30px;
+        }
+
+        .footer-seccion {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-seccion h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #81c784;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #81c784;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .footer-seccion p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 8px 0;
+            color: #b0bec5;
+        }
+
+        .footer-inferior {
+            background-color: #08140a;
+            text-align: center;
+            padding: 15px 20px;
+            border-top: 1px solid #143316;
+        }
+
+        .footer-inferior p {
+            font-size: 14px;
+            color: #90a4ae;
+            margin: 0;
+        }
+    </style>
+</html>
